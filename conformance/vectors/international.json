@@ -1,0 +1,152 @@
+{
+  "name": "International structural edge cases",
+  "description": "Countries whose rules break the assumptions baked into US-centric validators.",
+  "cases": [
+    {
+      "id": "ae-no-postal-code",
+      "description": "The UAE has no postal code at all; requiring one would be wrong",
+      "address": {
+        "countryCode": "AE",
+        "name": "Ahmed Al Mansouri",
+        "streetAddress": ["Sheikh Zayed Road"],
+        "administrativeArea": "Dubai"
+      },
+      "expect": { "valid": true, "issueCodes": [] }
+    },
+    {
+      "id": "ae-postal-code-unsupported",
+      "description": "Supplying a postal code for the UAE is a warning, not an error",
+      "address": {
+        "countryCode": "AE",
+        "streetAddress": ["Sheikh Zayed Road"],
+        "administrativeArea": "Dubai",
+        "postalCode": "00000"
+      },
+      "expect": { "valid": true, "complete": false, "issueCodes": ["FIELD_UNSUPPORTED"] }
+    },
+    {
+      "id": "hk-no-postal-code",
+      "description": "Hong Kong likewise has no postal code",
+      "address": {
+        "countryCode": "HK",
+        "streetAddress": ["18 Salisbury Road"],
+        "locality": "Tsim Sha Tsui",
+        "administrativeArea": "Kowloon"
+      },
+      "expect": { "valid": true, "issueCodes": [] }
+    },
+    {
+      "id": "ie-postal-code-optional",
+      "description": "Ireland has an Eircode but does not require it",
+      "address": {
+        "countryCode": "IE",
+        "streetAddress": ["Herbert Park"],
+        "locality": "Dublin"
+      },
+      "expect": { "valid": true, "issueCodes": [] }
+    },
+    {
+      "id": "ie-eircode-valid",
+      "description": "A well-formed Eircode passes",
+      "address": {
+        "countryCode": "IE",
+        "streetAddress": ["Herbert Park"],
+        "locality": "Dublin",
+        "postalCode": "A65 F4E2"
+      },
+      "expect": { "valid": true, "issueCodes": [] }
+    },
+    {
+      "id": "gb-postcode-normalised",
+      "description": "A UK postcode gains its canonical space and is reported as replaced",
+      "address": {
+        "countryCode": "GB",
+        "streetAddress": ["10 Downing Street"],
+        "locality": "London",
+        "postalCode": "sw1a2aa"
+      },
+      "expect": { "valid": true, "normalized": { "postalCode": "SW1A 2AA" }, "issueCodes": [] }
+    },
+    {
+      "id": "gb-postcode-invalid",
+      "description": "A malformed UK postcode is rejected",
+      "address": {
+        "countryCode": "GB",
+        "streetAddress": ["10 Downing Street"],
+        "locality": "London",
+        "postalCode": "ZZ1 9ZZ"
+      },
+      "expect": { "valid": false, "issueCodes": ["POSTAL_CODE_PATTERN_MISMATCH"] }
+    },
+    {
+      "id": "jp-postal-order-and-marker",
+      "description": "Japanese addresses format largest-to-smallest and keep the 〒 marker",
+      "address": {
+        "countryCode": "JP",
+        "name": "田中恵子",
+        "streetAddress": ["八重洲1-5-3"],
+        "locality": "目黒区",
+        "administrativeArea": "東京都",
+        "postalCode": "1008994"
+      },
+      "expect": {
+        "valid": true,
+        "normalized": { "postalCode": "100-8994" },
+        "formatted": ["〒100-8994", "東京都目黒区", "八重洲1-5-3", "田中恵子"]
+      }
+    },
+    {
+      "id": "ca-postal-code-normalised",
+      "description": "Canadian postal codes get their canonical mid-space",
+      "address": {
+        "countryCode": "CA",
+        "streetAddress": ["150 Elgin St"],
+        "locality": "Ottawa",
+        "administrativeArea": "Ontario",
+        "postalCode": "k2p1l4"
+      },
+      "expect": {
+        "valid": true,
+        "normalized": { "postalCode": "K2P 1L4", "administrativeArea": "ON" },
+        "issueCodes": []
+      }
+    },
+    {
+      "id": "br-cep-normalised",
+      "description": "Brazilian CEP gains its hyphen",
+      "address": {
+        "countryCode": "BR",
+        "streetAddress": ["Av. Paulista 1578"],
+        "dependentLocality": "Bela Vista",
+        "locality": "São Paulo",
+        "administrativeArea": "SP",
+        "postalCode": "01310100"
+      },
+      "expect": { "valid": true, "normalized": { "postalCode": "01310-100" } }
+    },
+    {
+      "id": "fr-sorting-code-supported",
+      "description": "France uses a sorting code (CEDEX), which most validators drop entirely",
+      "address": {
+        "countryCode": "FR",
+        "streetAddress": ["12 Rue de Rivoli"],
+        "locality": "Paris",
+        "postalCode": "75001",
+        "sortingCode": "CEDEX 01"
+      },
+      "expect": { "valid": true, "issueCodes": [] }
+    },
+    {
+      "id": "unknown-country-degrades-loudly",
+      "description": "An unknown country warns rather than silently passing",
+      "address": { "countryCode": "ZZ", "streetAddress": ["1 Nowhere St"] },
+      "expect": { "valid": true, "issueCodes": ["COUNTRY_UNKNOWN"] }
+    },
+    {
+      "id": "missing-country-is-an-error",
+      "description": "Nothing can be validated without a country",
+      "address": { "countryCode": "" },
+      "expect": { "valid": false, "granularity": "none", "issueCodes": ["COUNTRY_REQUIRED"] }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@smartaddress/react",
+  "version": "0.1.0",
+  "description": "Headless React hooks for SmartAddress. No UI, no styling — you render, it validates.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "files": ["dist"],
+  "sideEffects": false,
+  "scripts": { "build": "tsc -b" },
+  "peerDependencies": { "react": ">=17", "@smartaddress/core": "workspace:^" },
+  "devDependencies": { "@types/react": "^19.0.1", "react": "^19.0.0" },
+  "repository": { "type": "git", "url": "git+https://github.com/desiben/SmartAddress.git", "directory": "packages/react" }
+}

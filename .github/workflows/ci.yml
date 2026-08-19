@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # The committed snapshot must match what the generator produces, so a
+      # hand-edit to generated data fails CI rather than drifting silently.
+      - name: Verify generated data is reproducible
+        run: |
+          pnpm tsx packages/data/scripts/bootstrap.ts
+          git diff --exit-code -- packages/data/data/ \
+            || (echo "::error::packages/data/data is out of sync with its generator." && exit 1)
+
+      - run: pnpm typecheck
+
+      - run: pnpm test
+
+      - run: pnpm build

@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/core"
+    },
+    {
+      "path": "./packages/data"
+    },
+    {
+      "path": "./packages/react"
+    },
+    {
+      "path": "./packages/cli"
+    }
+  ]
+}

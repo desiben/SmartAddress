@@ -1,0 +1,172 @@
+{
+  "name": "Address type classification",
+  "description": "The capability that distinguishes SmartAddress from a postcode regex. Type gates the rules.",
+  "cases": [
+    {
+      "id": "type-po-box-en",
+      "description": "An English PO Box is classified and marked courier-undeliverable",
+      "address": {
+        "countryCode": "US",
+        "streetAddress": ["PO Box 1234"],
+        "locality": "Cupertino",
+        "administrativeArea": "CA",
+        "postalCode": "95014"
+      },
+      "expect": {
+        "type": "po_box",
+        "granularity": "postal_code",
+        "capabilities": { "courierDeliverable": false, "postalDeliverable": true }
+      }
+    },
+    {
+      "id": "type-po-box-rejected-when-courier-required",
+      "description": "requireCourierDeliverable turns a valid PO Box into an error",
+      "address": {
+        "countryCode": "US",
+        "streetAddress": ["P.O. Box 1234"],
+        "locality": "Cupertino",
+        "administrativeArea": "CA",
+        "postalCode": "95014"
+      },
+      "options": { "requireCourierDeliverable": true },
+      "expect": { "valid": false, "type": "po_box", "issueCodes": ["PO_BOX_NOT_ACCEPTED"] }
+    },
+    {
+      "id": "type-postfach-de",
+      "description": "German Postfach is recognised as a PO Box",
+      "address": {
+        "countryCode": "DE",
+        "streetAddress": ["Postfach 4711"],
+        "locality": "Berlin",
+        "postalCode": "10115"
+      },
+      "expect": { "type": "po_box", "valid": true }
+    },
+    {
+      "id": "type-boite-postale-fr",
+      "description": "French Boîte Postale is recognised as a PO Box",
+      "address": {
+        "countryCode": "FR",
+        "streetAddress": ["Boîte Postale 42"],
+        "locality": "Paris",
+        "postalCode": "75001"
+      },
+      "expect": { "type": "po_box" }
+    },
+    {
+      "id": "type-street-not-confused-by-boxwood",
+      "description": "A street whose name merely contains 'box' is not a PO Box",
+      "address": {
+        "countryCode": "US",
+        "streetAddress": ["12 Boxwood Lane"],
+        "locality": "Cupertino",
+        "administrativeArea": "CA",
+        "postalCode": "95014"
+      },
+      "expect": { "type": "street", "capabilities": { "courierDeliverable": true } }
+    },
+    {
+      "id": "type-military-apo-valid",
+      "description": "A correct APO address validates, and is not courier-deliverable",
+      "address": {
+        "countryCode": "US",
+        "name": "SSG Jane Doe",
+        "streetAddress": ["CMR 1234, Box 5678"],
+        "locality": "APO",
+        "administrativeArea": "AE",
+        "postalCode": "09123"
+      },
+      "expect": {
+        "valid": true,
+        "type": "military",
+        "granularity": "postal_code",
+        "capabilities": { "courierDeliverable": false, "requiresCustomsDeclaration": true },
+        "issueCodes": []
+      }
+    },
+    {
+      "id": "type-military-zip-region-mismatch",
+      "description": "An AE address with an AP-range ZIP is caught",
+      "address": {
+        "countryCode": "US",
+        "streetAddress": ["Unit 5000 Box 20"],
+        "locality": "APO",
+        "administrativeArea": "AE",
+        "postalCode": "96201"
+      },
+      "expect": { "valid": false, "type": "military", "issueCodes": ["MILITARY_POSTAL_CODE_INVALID"] }
+    },
+    {
+      "id": "type-military-bad-state",
+      "description": "A military address using a civilian state is caught",
+      "address": {
+        "countryCode": "US",
+        "streetAddress": ["Unit 5000 Box 20"],
+        "locality": "APO",
+        "administrativeArea": "CA",
+        "postalCode": "96201"
+      },
+      "expect": { "valid": false, "type": "military", "issueCodes": ["MILITARY_ADMIN_AREA_INVALID"] }
+    },
+    {
+      "id": "type-rural-route",
+      "description": "USPS rural route form",
+      "address": {
+        "countryCode": "US",
+        "streetAddress": ["RR 2 Box 152"],
+        "locality": "Cordova",
+        "administrativeArea": "AK",
+        "postalCode": "99574"
+      },
+      "expect": { "type": "rural_route", "capabilities": { "courierDeliverable": false } }
+    },
+    {
+      "id": "type-highway-contract",
+      "description": "USPS highway contract route form",
+      "address": {
+        "countryCode": "US",
+        "streetAddress": ["HC 1 Box 24"],
+        "locality": "Cordova",
+        "administrativeArea": "AK",
+        "postalCode": "99574"
+      },
+      "expect": { "type": "highway_contract" }
+    },
+    {
+      "id": "type-general-delivery",
+      "description": "General delivery cannot resolve past the locality",
+      "address": {
+        "countryCode": "US",
+        "streetAddress": ["General Delivery"],
+        "locality": "Cordova",
+        "administrativeArea": "AK",
+        "postalCode": "99574"
+      },
+      "expect": { "type": "general_delivery", "granularity": "locality" }
+    },
+    {
+      "id": "type-packstation-de",
+      "description": "A German Packstation is a parcel locker, and couriers do reach it",
+      "address": {
+        "countryCode": "DE",
+        "streetAddress": ["Packstation 123"],
+        "locality": "Berlin",
+        "postalCode": "10115"
+      },
+      "expect": { "type": "parcel_locker", "capabilities": { "courierDeliverable": true, "residential": false } }
+    },
+    {
+      "id": "type-accept-list-rejects",
+      "description": "acceptTypes gives callers an explicit allow-list",
+      "address": {
+        "countryCode": "US",
+        "streetAddress": ["PO Box 9"],
+        "locality": "Cupertino",
+        "administrativeArea": "CA",
+        "postalCode": "95014"
+      },
+      "options": { "acceptTypes": ["street"] },
+      "expect": { "valid": false, "issueCodes": ["TYPE_NOT_ACCEPTED"] }
+    }
+  ]
+}

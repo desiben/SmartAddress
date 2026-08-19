@@ -1,0 +1,99 @@
+{
+  "name": "United States",
+  "cases": [
+    {
+      "id": "us-basic-valid",
+      "description": "A well-formed California address",
+      "address": {
+        "countryCode": "US",
+        "name": "Jane Doe",
+        "streetAddress": ["1600 Amphitheatre Pkwy"],
+        "locality": "Mountain View",
+        "administrativeArea": "CA",
+        "postalCode": "94043"
+      },
+      "expect": {
+        "valid": true,
+        "type": "street",
+        "granularity": "street",
+        "complete": true,
+        "issueCodes": [],
+        "capabilities": { "courierDeliverable": true },
+        "formatted": ["Jane Doe", "1600 Amphitheatre Pkwy", "MOUNTAIN VIEW, CA 94043"]
+      }
+    },
+    {
+      "id": "us-state-name-canonicalised",
+      "description": "A full state name is canonicalised to its code and reported as replaced",
+      "address": {
+        "countryCode": "US",
+        "streetAddress": ["1600 Amphitheatre Pkwy"],
+        "locality": "Mountain View",
+        "administrativeArea": "California",
+        "postalCode": "94043"
+      },
+      "expect": {
+        "valid": true,
+        "issueCodes": [],
+        "normalized": { "administrativeArea": "CA" }
+      }
+    },
+    {
+      "id": "us-zip-plus-four",
+      "description": "ZIP+4 is valid",
+      "address": {
+        "countryCode": "US",
+        "streetAddress": ["1 Infinite Loop"],
+        "locality": "Cupertino",
+        "administrativeArea": "CA",
+        "postalCode": "95014-2083"
+      },
+      "expect": { "valid": true, "issueCodes": [] }
+    },
+    {
+      "id": "us-zip-malformed",
+      "description": "A four-digit ZIP fails the pattern",
+      "address": {
+        "countryCode": "US",
+        "streetAddress": ["1 Infinite Loop"],
+        "locality": "Cupertino",
+        "administrativeArea": "CA",
+        "postalCode": "9501"
+      },
+      "expect": {
+        "valid": false,
+        "issueCodes": ["POSTAL_CODE_PATTERN_MISMATCH"]
+      }
+    },
+    {
+      "id": "us-unknown-state",
+      "description": "A state that does not exist is rejected",
+      "address": {
+        "countryCode": "US",
+        "streetAddress": ["1 Main St"],
+        "locality": "Springfield",
+        "administrativeArea": "Freedonia",
+        "postalCode": "12345"
+      },
+      "expect": { "valid": false, "issueCodes": ["ADMIN_AREA_UNKNOWN"] }
+    },
+    {
+      "id": "us-missing-required",
+      "description": "Country only: every required field is reported at once",
+      "address": { "countryCode": "US" },
+      "expect": {
+        "valid": false,
+        "complete": false,
+        "granularity": "country",
+        "issueCodes": ["FIELD_REQUIRED"]
+      }
+    },
+    {
+      "id": "us-partial-downgrades-required",
+      "description": "partial:true turns missing-required into warnings for progressive forms",
+      "address": { "countryCode": "US", "administrativeArea": "CA" },
+      "options": { "partial": true },
+      "expect": { "valid": true, "complete": false }
+    }
+  ]
+}

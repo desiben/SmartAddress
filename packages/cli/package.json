@@ -1,0 +1,13 @@
+{
+  "name": "@smartaddress/cli",
+  "version": "0.1.0",
+  "description": "SmartAddress command line: validate addresses from any language via JSON in, JSON out.",
+  "license": "MIT",
+  "type": "module",
+  "bin": { "smartaddress": "./dist/cli.js" },
+  "main": "./dist/cli.js",
+  "files": ["dist"],
+  "scripts": { "build": "tsc -b" },
+  "dependencies": { "@smartaddress/core": "workspace:^", "@smartaddress/data": "workspace:^" },
+  "repository": { "type": "git", "url": "git+https://github.com/desiben/SmartAddress.git", "directory": "packages/cli" }
+}

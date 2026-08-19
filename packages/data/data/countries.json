@@ -1,0 +1,1520 @@
+{
+  "generatedAt": "bootstrap",
+  "source": "bootstrap seed (packages/data/scripts/bootstrap.ts)",
+  "bootstrap": true,
+  "note": "Partial hand-entered seed. Run `pnpm sync:data` to replace with the full upstream set.",
+  "countries": {
+    "US": {
+      "countryCode": "US",
+      "name": "United States",
+      "format": [
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "locality",
+            "administrativeArea",
+            "postalCode"
+          ],
+          "separators": [
+            ", ",
+            " ",
+            ""
+          ]
+        }
+      ],
+      "required": [
+        "streetAddress",
+        "locality",
+        "administrativeArea",
+        "postalCode"
+      ],
+      "supported": [
+        "name",
+        "organization",
+        "streetAddress",
+        "locality",
+        "administrativeArea",
+        "postalCode"
+      ],
+      "uppercase": [
+        "locality",
+        "administrativeArea"
+      ],
+      "postalCodePattern": "(\\d{5})(?:[ \\-](\\d{4}))?",
+      "postalCodeExamples": [
+        "95014",
+        "22162-1010"
+      ],
+      "labels": {
+        "administrativeArea": "State",
+        "locality": "City",
+        "dependentLocality": "District",
+        "postalCode": "ZIP code"
+      },
+      "administrativeAreas": [
+        {
+          "code": "AL",
+          "name": "Alabama"
+        },
+        {
+          "code": "AK",
+          "name": "Alaska"
+        },
+        {
+          "code": "AS",
+          "name": "American Samoa"
+        },
+        {
+          "code": "AZ",
+          "name": "Arizona"
+        },
+        {
+          "code": "AR",
+          "name": "Arkansas"
+        },
+        {
+          "code": "AA",
+          "name": "Armed Forces (AA)"
+        },
+        {
+          "code": "AE",
+          "name": "Armed Forces (AE)"
+        },
+        {
+          "code": "AP",
+          "name": "Armed Forces (AP)"
+        },
+        {
+          "code": "CA",
+          "name": "California"
+        },
+        {
+          "code": "CO",
+          "name": "Colorado"
+        },
+        {
+          "code": "CT",
+          "name": "Connecticut"
+        },
+        {
+          "code": "DE",
+          "name": "Delaware"
+        },
+        {
+          "code": "DC",
+          "name": "District of Columbia"
+        },
+        {
+          "code": "FL",
+          "name": "Florida"
+        },
+        {
+          "code": "GA",
+          "name": "Georgia"
+        },
+        {
+          "code": "GU",
+          "name": "Guam"
+        },
+        {
+          "code": "HI",
+          "name": "Hawaii"
+        },
+        {
+          "code": "ID",
+          "name": "Idaho"
+        },
+        {
+          "code": "IL",
+          "name": "Illinois"
+        },
+        {
+          "code": "IN",
+          "name": "Indiana"
+        },
+        {
+          "code": "IA",
+          "name": "Iowa"
+        },
+        {
+          "code": "KS",
+          "name": "Kansas"
+        },
+        {
+          "code": "KY",
+          "name": "Kentucky"
+        },
+        {
+          "code": "LA",
+          "name": "Louisiana"
+        },
+        {
+          "code": "ME",
+          "name": "Maine"
+        },
+        {
+          "code": "MH",
+          "name": "Marshall Islands"
+        },
+        {
+          "code": "MD",
+          "name": "Maryland"
+        },
+        {
+          "code": "MA",
+          "name": "Massachusetts"
+        },
+        {
+          "code": "MI",
+          "name": "Michigan"
+        },
+        {
+          "code": "FM",
+          "name": "Micronesia"
+        },
+        {
+          "code": "MN",
+          "name": "Minnesota"
+        },
+        {
+          "code": "MS",
+          "name": "Mississippi"
+        },
+        {
+          "code": "MO",
+          "name": "Missouri"
+        },
+        {
+          "code": "MT",
+          "name": "Montana"
+        },
+        {
+          "code": "NE",
+          "name": "Nebraska"
+        },
+        {
+          "code": "NV",
+          "name": "Nevada"
+        },
+        {
+          "code": "NH",
+          "name": "New Hampshire"
+        },
+        {
+          "code": "NJ",
+          "name": "New Jersey"
+        },
+        {
+          "code": "NM",
+          "name": "New Mexico"
+        },
+        {
+          "code": "NY",
+          "name": "New York"
+        },
+        {
+          "code": "NC",
+          "name": "North Carolina"
+        },
+        {
+          "code": "ND",
+          "name": "North Dakota"
+        },
+        {
+          "code": "MP",
+          "name": "Northern Mariana Islands"
+        },
+        {
+          "code": "OH",
+          "name": "Ohio"
+        },
+        {
+          "code": "OK",
+          "name": "Oklahoma"
+        },
+        {
+          "code": "OR",
+          "name": "Oregon"
+        },
+        {
+          "code": "PW",
+          "name": "Palau"
+        },
+        {
+          "code": "PA",
+          "name": "Pennsylvania"
+        },
+        {
+          "code": "PR",
+          "name": "Puerto Rico"
+        },
+        {
+          "code": "RI",
+          "name": "Rhode Island"
+        },
+        {
+          "code": "SC",
+          "name": "South Carolina"
+        },
+        {
+          "code": "SD",
+          "name": "South Dakota"
+        },
+        {
+          "code": "TN",
+          "name": "Tennessee"
+        },
+        {
+          "code": "TX",
+          "name": "Texas"
+        },
+        {
+          "code": "UT",
+          "name": "Utah"
+        },
+        {
+          "code": "VT",
+          "name": "Vermont"
+        },
+        {
+          "code": "VI",
+          "name": "Virgin Islands"
+        },
+        {
+          "code": "VA",
+          "name": "Virginia"
+        },
+        {
+          "code": "WA",
+          "name": "Washington"
+        },
+        {
+          "code": "WV",
+          "name": "West Virginia"
+        },
+        {
+          "code": "WI",
+          "name": "Wisconsin"
+        },
+        {
+          "code": "WY",
+          "name": "Wyoming"
+        }
+      ],
+      "defaultLanguage": "en",
+      "postalServiceUrl": "https://tools.usps.com/go/ZipLookupAction!input.action"
+    },
+    "CA": {
+      "countryCode": "CA",
+      "name": "Canada",
+      "format": [
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "locality",
+            "administrativeArea",
+            "postalCode"
+          ],
+          "separators": [
+            " ",
+            " ",
+            ""
+          ]
+        }
+      ],
+      "required": [
+        "streetAddress",
+        "locality",
+        "administrativeArea",
+        "postalCode"
+      ],
+      "supported": [
+        "name",
+        "organization",
+        "streetAddress",
+        "locality",
+        "administrativeArea",
+        "postalCode"
+      ],
+      "uppercase": [
+        "streetAddress",
+        "locality",
+        "name",
+        "organization",
+        "administrativeArea",
+        "postalCode"
+      ],
+      "postalCodePattern": "[ABCEGHJKLMNPRSTVXY]\\d[ABCEGHJ-NPRSTV-Z][ ]?\\d[ABCEGHJ-NPRSTV-Z]\\d",
+      "postalCodeExamples": [
+        "H3Z 2Y7",
+        "V8X 3X4",
+        "T0L 1K0"
+      ],
+      "labels": {
+        "administrativeArea": "Province",
+        "locality": "City",
+        "dependentLocality": "District",
+        "postalCode": "Postal code"
+      },
+      "administrativeAreas": [
+        {
+          "code": "AB",
+          "name": "Alberta"
+        },
+        {
+          "code": "BC",
+          "name": "British Columbia"
+        },
+        {
+          "code": "MB",
+          "name": "Manitoba"
+        },
+        {
+          "code": "NB",
+          "name": "New Brunswick"
+        },
+        {
+          "code": "NL",
+          "name": "Newfoundland and Labrador"
+        },
+        {
+          "code": "NT",
+          "name": "Northwest Territories"
+        },
+        {
+          "code": "NS",
+          "name": "Nova Scotia"
+        },
+        {
+          "code": "NU",
+          "name": "Nunavut"
+        },
+        {
+          "code": "ON",
+          "name": "Ontario"
+        },
+        {
+          "code": "PE",
+          "name": "Prince Edward Island"
+        },
+        {
+          "code": "QC",
+          "name": "Quebec"
+        },
+        {
+          "code": "SK",
+          "name": "Saskatchewan"
+        },
+        {
+          "code": "YT",
+          "name": "Yukon"
+        }
+      ],
+      "defaultLanguage": "en"
+    },
+    "GB": {
+      "countryCode": "GB",
+      "name": "United Kingdom",
+      "format": [
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "locality"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "postalCode"
+          ],
+          "separators": [
+            ""
+          ]
+        }
+      ],
+      "required": [
+        "streetAddress",
+        "locality",
+        "postalCode"
+      ],
+      "supported": [
+        "name",
+        "organization",
+        "streetAddress",
+        "locality",
+        "postalCode"
+      ],
+      "uppercase": [
+        "locality",
+        "postalCode"
+      ],
+      "postalCodePattern": "GIR ?0AA|(?:(?:AB|AL|B|BA|BB|BD|BF|BH|BL|BN|BR|BS|BT|BX|CA|CB|CF|CH|CM|CO|CR|CT|CV|CW|DA|DD|DE|DG|DH|DL|DN|DT|DY|E|EC|EH|EN|EX|FK|FY|G|GL|GY|GU|HA|HD|HG|HP|HR|HS|HU|HX|IG|IM|IP|IV|JE|KA|KT|KW|KY|L|LA|LD|LE|LL|LN|LS|LU|M|ME|MK|ML|N|NE|NG|NN|NP|NR|NW|OL|OX|PA|PE|PH|PL|PO|PR|RG|RH|RM|S|SA|SE|SG|SK|SL|SM|SN|SO|SP|SR|SS|ST|SW|SY|TA|TD|TF|TN|TQ|TR|TS|TW|UB|W|WA|WC|WD|WF|WN|WR|WS|WV|YO|ZE)(?:\\d[\\dA-Z]? ?\\d[ABD-HJLN-UW-Z]{2}))",
+      "postalCodeExamples": [
+        "EC1Y 8SY",
+        "GIR 0AA",
+        "M2 5BQ",
+        "SW1A 1AA"
+      ],
+      "labels": {
+        "administrativeArea": "State / Province",
+        "locality": "Post town",
+        "dependentLocality": "District",
+        "postalCode": "Postal code"
+      },
+      "defaultLanguage": "en",
+      "postalServiceUrl": "https://www.royalmail.com/find-a-postcode"
+    },
+    "DE": {
+      "countryCode": "DE",
+      "name": "Germany",
+      "format": [
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "postalCode",
+            "locality"
+          ],
+          "separators": [
+            " ",
+            ""
+          ]
+        }
+      ],
+      "required": [
+        "streetAddress",
+        "locality",
+        "postalCode"
+      ],
+      "supported": [
+        "name",
+        "organization",
+        "streetAddress",
+        "postalCode",
+        "locality"
+      ],
+      "uppercase": [],
+      "postalCodePattern": "\\d{5}",
+      "postalCodeExamples": [
+        "26133",
+        "53225"
+      ],
+      "labels": {
+        "administrativeArea": "State / Province",
+        "locality": "City",
+        "dependentLocality": "District",
+        "postalCode": "Postal code"
+      },
+      "defaultLanguage": "de"
+    },
+    "FR": {
+      "countryCode": "FR",
+      "name": "France",
+      "format": [
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "postalCode",
+            "locality",
+            "sortingCode"
+          ],
+          "separators": [
+            " ",
+            " ",
+            ""
+          ]
+        }
+      ],
+      "required": [
+        "streetAddress",
+        "locality",
+        "postalCode"
+      ],
+      "supported": [
+        "name",
+        "organization",
+        "streetAddress",
+        "postalCode",
+        "locality",
+        "sortingCode"
+      ],
+      "uppercase": [
+        "locality",
+        "sortingCode"
+      ],
+      "postalCodePattern": "\\d{2} ?\\d{3}",
+      "postalCodeExamples": [
+        "11000",
+        "33380",
+        "99300"
+      ],
+      "labels": {
+        "administrativeArea": "State / Province",
+        "locality": "City",
+        "dependentLocality": "District",
+        "postalCode": "Postal code"
+      },
+      "defaultLanguage": "fr"
+    },
+    "JP": {
+      "countryCode": "JP",
+      "name": "Japan",
+      "format": [
+        {
+          "fields": [
+            "postalCode"
+          ],
+          "separators": [
+            ""
+          ],
+          "prefix": "〒"
+        },
+        {
+          "fields": [
+            "administrativeArea",
+            "locality"
+          ],
+          "separators": [
+            "",
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        }
+      ],
+      "latinFormat": [
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "locality",
+            "administrativeArea"
+          ],
+          "separators": [
+            ", ",
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "postalCode"
+          ],
+          "separators": [
+            ""
+          ]
+        }
+      ],
+      "required": [
+        "streetAddress",
+        "administrativeArea",
+        "postalCode"
+      ],
+      "supported": [
+        "postalCode",
+        "administrativeArea",
+        "locality",
+        "streetAddress",
+        "organization",
+        "name"
+      ],
+      "uppercase": [],
+      "postalCodePattern": "\\d{3}-?\\d{4}",
+      "postalCodeExamples": [
+        "154-0023",
+        "350-1106"
+      ],
+      "labels": {
+        "administrativeArea": "Prefecture",
+        "locality": "City",
+        "dependentLocality": "District",
+        "postalCode": "Postal code"
+      },
+      "defaultLanguage": "ja"
+    },
+    "CN": {
+      "countryCode": "CN",
+      "name": "China",
+      "format": [
+        {
+          "fields": [
+            "postalCode"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "administrativeArea",
+            "locality",
+            "dependentLocality"
+          ],
+          "separators": [
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        }
+      ],
+      "latinFormat": [
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "dependentLocality"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "locality"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "administrativeArea",
+            "postalCode"
+          ],
+          "separators": [
+            ", ",
+            ""
+          ]
+        }
+      ],
+      "required": [
+        "streetAddress",
+        "locality",
+        "administrativeArea",
+        "postalCode"
+      ],
+      "supported": [
+        "postalCode",
+        "administrativeArea",
+        "locality",
+        "dependentLocality",
+        "streetAddress",
+        "organization",
+        "name"
+      ],
+      "uppercase": [],
+      "postalCodePattern": "\\d{6}",
+      "postalCodeExamples": [
+        "266033",
+        "317204"
+      ],
+      "labels": {
+        "administrativeArea": "Province",
+        "locality": "City",
+        "dependentLocality": "District",
+        "postalCode": "Postal code"
+      },
+      "defaultLanguage": "zh"
+    },
+    "AU": {
+      "countryCode": "AU",
+      "name": "Australia",
+      "format": [
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "locality",
+            "administrativeArea",
+            "postalCode"
+          ],
+          "separators": [
+            " ",
+            " ",
+            ""
+          ]
+        }
+      ],
+      "required": [
+        "streetAddress",
+        "locality",
+        "administrativeArea",
+        "postalCode"
+      ],
+      "supported": [
+        "organization",
+        "name",
+        "streetAddress",
+        "locality",
+        "administrativeArea",
+        "postalCode"
+      ],
+      "uppercase": [
+        "locality",
+        "administrativeArea"
+      ],
+      "postalCodePattern": "\\d{4}",
+      "postalCodeExamples": [
+        "2060",
+        "3000",
+        "6532"
+      ],
+      "labels": {
+        "administrativeArea": "State",
+        "locality": "City",
+        "dependentLocality": "District",
+        "postalCode": "Postal code"
+      },
+      "administrativeAreas": [
+        {
+          "code": "ACT",
+          "name": "Australian Capital Territory"
+        },
+        {
+          "code": "NSW",
+          "name": "New South Wales"
+        },
+        {
+          "code": "NT",
+          "name": "Northern Territory"
+        },
+        {
+          "code": "QLD",
+          "name": "Queensland"
+        },
+        {
+          "code": "SA",
+          "name": "South Australia"
+        },
+        {
+          "code": "TAS",
+          "name": "Tasmania"
+        },
+        {
+          "code": "VIC",
+          "name": "Victoria"
+        },
+        {
+          "code": "WA",
+          "name": "Western Australia"
+        }
+      ],
+      "defaultLanguage": "en"
+    },
+    "IN": {
+      "countryCode": "IN",
+      "name": "India",
+      "format": [
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "dependentLocality"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "locality",
+            "postalCode"
+          ],
+          "separators": [
+            " ",
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "administrativeArea"
+          ],
+          "separators": [
+            ""
+          ]
+        }
+      ],
+      "required": [
+        "streetAddress",
+        "locality",
+        "administrativeArea",
+        "postalCode"
+      ],
+      "supported": [
+        "name",
+        "organization",
+        "streetAddress",
+        "dependentLocality",
+        "locality",
+        "postalCode",
+        "administrativeArea"
+      ],
+      "uppercase": [],
+      "postalCodePattern": "\\d{6}",
+      "postalCodeExamples": [
+        "110034",
+        "110001"
+      ],
+      "labels": {
+        "administrativeArea": "State",
+        "locality": "City",
+        "dependentLocality": "District",
+        "postalCode": "PIN code"
+      },
+      "defaultLanguage": "en"
+    },
+    "IE": {
+      "countryCode": "IE",
+      "name": "Ireland",
+      "format": [
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "dependentLocality"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "locality"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "administrativeArea"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "postalCode"
+          ],
+          "separators": [
+            ""
+          ]
+        }
+      ],
+      "required": [
+        "streetAddress",
+        "locality"
+      ],
+      "supported": [
+        "name",
+        "organization",
+        "streetAddress",
+        "dependentLocality",
+        "locality",
+        "administrativeArea",
+        "postalCode"
+      ],
+      "uppercase": [],
+      "postalCodePattern": "[\\dA-Z]{3} ?[\\dA-Z]{4}",
+      "postalCodeExamples": [
+        "A65 F4E2"
+      ],
+      "labels": {
+        "administrativeArea": "County",
+        "locality": "City",
+        "dependentLocality": "Townland",
+        "postalCode": "Eircode"
+      },
+      "defaultLanguage": "en"
+    },
+    "AE": {
+      "countryCode": "AE",
+      "name": "United Arab Emirates",
+      "format": [
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "administrativeArea"
+          ],
+          "separators": [
+            ""
+          ]
+        }
+      ],
+      "required": [
+        "streetAddress",
+        "administrativeArea"
+      ],
+      "supported": [
+        "name",
+        "organization",
+        "streetAddress",
+        "administrativeArea"
+      ],
+      "uppercase": [],
+      "postalCodeExamples": [],
+      "labels": {
+        "administrativeArea": "Emirate",
+        "locality": "City",
+        "dependentLocality": "District",
+        "postalCode": "Postal code"
+      },
+      "defaultLanguage": "ar"
+    },
+    "HK": {
+      "countryCode": "HK",
+      "name": "Hong Kong",
+      "format": [
+        {
+          "fields": [
+            "administrativeArea"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "locality"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        }
+      ],
+      "latinFormat": [
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "locality"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "administrativeArea"
+          ],
+          "separators": [
+            ""
+          ]
+        }
+      ],
+      "required": [
+        "streetAddress",
+        "administrativeArea"
+      ],
+      "supported": [
+        "administrativeArea",
+        "locality",
+        "streetAddress",
+        "organization",
+        "name"
+      ],
+      "uppercase": [],
+      "postalCodeExamples": [],
+      "labels": {
+        "administrativeArea": "Area",
+        "locality": "District",
+        "dependentLocality": "District",
+        "postalCode": "Postal code"
+      },
+      "defaultLanguage": "zh-Hant"
+    },
+    "BR": {
+      "countryCode": "BR",
+      "name": "Brazil",
+      "format": [
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "dependentLocality"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "locality",
+            "administrativeArea"
+          ],
+          "separators": [
+            "-",
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "postalCode"
+          ],
+          "separators": [
+            ""
+          ]
+        }
+      ],
+      "required": [
+        "streetAddress",
+        "administrativeArea",
+        "locality",
+        "postalCode"
+      ],
+      "supported": [
+        "organization",
+        "name",
+        "streetAddress",
+        "dependentLocality",
+        "locality",
+        "administrativeArea",
+        "postalCode"
+      ],
+      "uppercase": [
+        "locality",
+        "administrativeArea"
+      ],
+      "postalCodePattern": "\\d{5}-?\\d{3}",
+      "postalCodeExamples": [
+        "40301-110",
+        "70002-900"
+      ],
+      "labels": {
+        "administrativeArea": "State",
+        "locality": "City",
+        "dependentLocality": "Neighborhood",
+        "postalCode": "Postal code"
+      },
+      "defaultLanguage": "pt"
+    },
+    "NL": {
+      "countryCode": "NL",
+      "name": "Netherlands",
+      "format": [
+        {
+          "fields": [
+            "name"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "organization"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "streetAddress"
+          ],
+          "separators": [
+            ""
+          ]
+        },
+        {
+          "fields": [
+            "postalCode",
+            "locality"
+          ],
+          "separators": [
+            " ",
+            ""
+          ]
+        }
+      ],
+      "required": [
+        "streetAddress",
+        "locality",
+        "postalCode"
+      ],
+      "supported": [
+        "name",
+        "organization",
+        "streetAddress",
+        "postalCode",
+        "locality"
+      ],
+      "uppercase": [],
+      "postalCodePattern": "\\d{4} ?[A-Z]{2}",
+      "postalCodeExamples": [
+        "1234 AB",
+        "2490 AA"
+      ],
+      "labels": {
+        "administrativeArea": "State / Province",
+        "locality": "City",
+        "dependentLocality": "District",
+        "postalCode": "Postal code"
+      },
+      "defaultLanguage": "nl"
+    }
+  }
+}

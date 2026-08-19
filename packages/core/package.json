@@ -1,0 +1,15 @@
+{
+  "name": "@smartaddress/core",
+  "version": "0.1.0",
+  "description": "Reusable, pluggable international address validation engine. Zero dependencies, offline, isomorphic.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "files": ["dist"],
+  "sideEffects": false,
+  "scripts": { "build": "tsc -b" },
+  "keywords": ["address", "validation", "international", "postal", "i18n", "pluggable"],
+  "repository": { "type": "git", "url": "git+https://github.com/desiben/SmartAddress.git", "directory": "packages/core" }
+}
