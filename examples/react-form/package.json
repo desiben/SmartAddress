@@ -1,0 +1,14 @@
+{
+  "name": "@smartaddress/example-react-form",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The README's React example, as a real compiled package so the docs cannot drift from the API.",
+  "type": "module",
+  "scripts": { "build": "tsc -b" },
+  "dependencies": {
+    "@smartaddress/core": "workspace:^",
+    "@smartaddress/data": "workspace:^",
+    "@smartaddress/react": "workspace:^"
+  },
+  "devDependencies": { "@types/react": "^19.0.1", "react": "^19.0.0" }
+}

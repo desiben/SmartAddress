@@ -21,6 +21,25 @@ importers:
         specifier: ^2.1.8
         version: 2.1.9(@types/node@26.2.0)
 
+  examples/react-form:
+    dependencies:
+      '@smartaddress/core':
+        specifier: workspace:^
+        version: link:../../packages/core
+      '@smartaddress/data':
+        specifier: workspace:^
+        version: link:../../packages/data
+      '@smartaddress/react':
+        specifier: workspace:^
+        version: link:../../packages/react
+    devDependencies:
+      '@types/react':
+        specifier: ^19.0.1
+        version: 19.2.18
+      react:
+        specifier: ^19.0.0
+        version: 19.2.8
+
   packages/cli:
     dependencies:
       '@smartaddress/core':

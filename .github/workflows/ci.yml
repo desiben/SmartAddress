@@ -38,4 +38,6 @@ jobs:
 
       - run: pnpm test
 
+      # Builds every workspace package, including examples/ — so the README's
+      # React example is compiled on every push and cannot drift from the API.
       - run: pnpm build

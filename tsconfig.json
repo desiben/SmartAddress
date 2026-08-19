@@ -12,6 +12,9 @@
     },
     {
       "path": "./packages/cli"
+    },
+    {
+      "path": "./examples/react-form"
     }
   ]
 }
